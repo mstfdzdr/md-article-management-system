@@ -30,15 +30,15 @@ app.get('/articles', async (req, res) => {
 
 //read article by id
 app.get('/article/:id', async (req, res) => {
-  const reuestedId = req.params.id;
-  const article = await Article.findOne({where: {id: reuestedId}});
+  const requestedId = req.params.id;
+  const article = await Article.findOne({where: {id: requestedId}});
   res.send(article);
 })
 
 //update article by id
 app.put('/article/:id', async (req, res) => {
-  const reuestedId = req.params.id;
-  const article = await Article.findOne({where: {id: reuestedId}});
+  const requestedId = req.params.id;
+  const article = await Article.findOne({where: {id: requestedId}});
   article.update(req.body).then(() => {
     res.send('Article updated successfully');
   })
@@ -46,8 +46,8 @@ app.put('/article/:id', async (req, res) => {
 
 //delete
 app.delete('/article/:id', async (req, res) => {
-  const reuestedId = req.params.id;
-  const article = await Article.findOne({where: {id: reuestedId}});
+  const requestedId = req.params.id;
+  const article = await Article.findOne({where: {id: requestedId}});
   article.destroy().then(() => {
     res.send('Article deleted successfully');
   })
