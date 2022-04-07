@@ -41,6 +41,9 @@ Article.init({
     file_path: {
         type: DataTypes.TEXT,
     },
+    translated_file_path: {
+        type: DataTypes.TEXT,
+    },
 }, {
     sequelize,
     modelName: 'article'
