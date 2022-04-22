@@ -1,11 +1,11 @@
 # Article Management System for Personel Usage
 
-Bu projenin ne yaptığı ve kimin için olduğu hakkında kısa bir açıklama
+Bu proje literatür taraması yaparken kendi kişisel veritabanımı oluşturmak için kullanılacaktır.
 
 
 ## Kullanılan Teknolojiler
 
-**İstemci:** React, Redux, TailwindCSS
+**İstemci:** Vue3, Bootstrap
 
 **Sunucu:** Node, Express, Sequelize
 
@@ -47,35 +47,49 @@ Bu projeyi çalıştırmak için aşağıdaki ortam değişkenlerini .env dosyan
     "notes": "Example note for this article",
     "lang": "English",
     "cite": "Example cite",
-    "file_path": "uploads/Example.pdf"
+    "file_path": "uploads/Example.pdf",
+    "translated_file_path": "uploads/Example_TR.pdf"
 }
 ```
   
 ## API Kullanımı
 
-#### Tüm öğeleri getir
+#### Tüm makaleleri getir
 
 ```http
-  GET /api/items
+  GET /articles
 ```
 
-| Parametre | Tip     | Açıklama                |
-| :-------- | :------- | :------------------------- |
-| `api_key` | `string` | **Gerekli**. API anahtarınız. |
-
-#### Öğeyi getir
+#### Tekil makale getir
 
 ```http
-  GET /api/items/${id}
+  GET /article/${id}
 ```
 
 | Parametre | Tip     | Açıklama                       |
 | :-------- | :------- | :-------------------------------- |
-| `id`      | `string` | **Gerekli**. Çağrılacak öğenin anahtar değeri |
+| `id`      | `int` | **Gerekli**. Çağrılacak öğenin anahtar değeri |
 
-#### add(num1, num2)
+#### Makaleyi güncelle
 
-İki sayı alır ve toplamı döndürür.
+```http
+  PUT /article/${id}
+```
+
+| Parametre | Tip     | Açıklama                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `int` | **Gerekli**. Çağrılacak öğenin anahtar değeri |
+
+
+#### Makaleyi sil
+
+```http
+  DELETE /article/${id}
+```
+
+| Parametre | Tip     | Açıklama                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `int` | **Gerekli**. Çağrılacak öğenin anahtar değeri |
 
 
 
