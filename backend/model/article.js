@@ -11,6 +11,9 @@ Article.init({
     title: {
         type: DataTypes.TEXT,
     },
+    author: {
+        type: DataTypes.TEXT,
+    },
     year: {
         type: DataTypes.INTEGER,
     },
